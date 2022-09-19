@@ -39,8 +39,7 @@
         "psr-4": {
             "Keboola\\StorageDriver\\UnitTests\\": "tests/unit",
             "GPBMetadata\\Tests\\": "tests/generated/GPBMetadata/Tests",
-            "Keboola\\StorageDriver\\GeneratedTests\\": "tests/generated/Keboola/StorageDriver/GeneratedTests",
-            "Keboola\\StorageDriver\\TestsStubLoader\\": "tests/StubLoader"
+            "Keboola\\StorageDriver\\GeneratedTests\\": "tests/generated/Keboola/StorageDriver/GeneratedTests"
         }
     },
     "config": {
@@ -60,10 +59,6 @@
         "tests": [
             "@protobufTests",
             "@phpunit"
-        ],
-        "loadS3": "php ./tests/StubLoader/loader.php s3",
-        "load-data": [
-            "@loadS3"
         ],
         "check": [
             "@composer validate --no-check-all --strict",
