@@ -34,6 +34,12 @@ class DriverRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated string features = 3;</code>
      */
     private $features;
+    /**
+     * name of the backend, this is used to create queue name in temporal
+     *
+     * Generated from protobuf field <code>string backend = 4;</code>
+     */
+    protected $backend = '';
 
     /**
      * Constructor.
@@ -47,6 +53,8 @@ class DriverRequest extends \Google\Protobuf\Internal\Message
      *           command object used for actions
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $features
      *           list of features which could be processed by backend
+     *     @type string $backend
+     *           name of the backend, this is used to create queue name in temporal
      * }
      */
     public function __construct($data = NULL) {
@@ -148,6 +156,32 @@ class DriverRequest extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->features = $arr;
+
+        return $this;
+    }
+
+    /**
+     * name of the backend, this is used to create queue name in temporal
+     *
+     * Generated from protobuf field <code>string backend = 4;</code>
+     * @return string
+     */
+    public function getBackend()
+    {
+        return $this->backend;
+    }
+
+    /**
+     * name of the backend, this is used to create queue name in temporal
+     *
+     * Generated from protobuf field <code>string backend = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setBackend($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->backend = $var;
 
         return $this;
     }

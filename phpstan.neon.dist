@@ -3,6 +3,8 @@ parameters:
     paths:
         - contract
         - tests
+        - Controller
+        - Driver
         - Shared
     excludePaths:
         analyseAndScan:
