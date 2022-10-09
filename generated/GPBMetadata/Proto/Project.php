@@ -17,7 +17,7 @@ class Project
         \GPBMetadata\Google\Protobuf\Any::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ê
+Õ
 proto/project.proto%keboola.storageDriver.command.project"º
 CreateProjectCommand
 stackPrefix (	
@@ -27,12 +27,27 @@ class Project
 rootDatabase (	
 	permSpace (	
 
-spoolSpace (	"É
+spoolSpace (	"¿
 CreateProjectResponse
 projectUserName (	
 projectRoleName (	
 projectPassword (	
-projectReadOnlyRoleName (	"Ñ
+projectReadOnlyRoleName (	"
+meta (2.google.protobuf.Anyñ
+!CreateProjectBigqueryResponseMeta
+type (	
+
+project_id (	
+private_key_id (	
+private_key (	
+client_email (	
+	client_id (	
+auth_uri (	
+	token_uri (	#
+auth_provider_x509_cert_url	 (	
+client_x509_cert_url
+ (	
+	folder_id (	"Ñ
 DropProjectCommand
 projectUserName (	
 projectRoleName (	
