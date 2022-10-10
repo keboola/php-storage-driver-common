@@ -12,8 +12,8 @@
     "require": {
         "php": ">=7.4",
         "ext-json": "*",
-        "google/protobuf": "^3.20",
-        "keboola/php-file-storage-utils": "^0.2.2",
+        "google/protobuf": "^3.21",
+        "keboola/php-file-storage-utils": "^0.2.5",
         "keboola/common-exceptions": "^1",
         "aws/aws-sdk-php": "^3"
     },
