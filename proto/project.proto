@@ -31,7 +31,23 @@ message CreateProjectResponse {
   string projectRoleName = 2; // newly created role name associated with project
   string projectPassword = 3; // project user password
   string projectReadOnlyRoleName = 4; // newly created role name which will have select grant on all tables and buckets in project
+  google.protobuf.Any meta = 5; // metadata specific for each backend
 }
+
+message CreateProjectBigqueryResponse {
+  string type = 1;
+  string project_id = 2;
+  string private_key_id = 3;
+  string private_key = 4;
+  string client_email = 5;
+  string client_id = 6;
+  string auth_uri = 7;
+  string token_uri = 8;
+  string auth_provider_x509_cert_url = 9;
+  string client_x509_cert_url = 10;
+  string folder_id = 11; // Id of folder where main service acc is created
+}
+
 
 /**
  * Command is used when project is deleted in Keboola connection
@@ -42,4 +58,8 @@ message DropProjectCommand {
   string projectRoleName = 2; // project associated role name which will be removed
   string readOnlyRoleName = 3; // project associated read only role name which will be removed
   google.protobuf.Any meta = 4; // metadata specific for each backend
+}
+
+message DropProjectBigqueryCommand {
+  string project_id = 1;
 }
