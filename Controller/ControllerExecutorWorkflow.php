@@ -28,6 +28,9 @@ class ControllerExecutorWorkflow implements ControllerExecutorWorkflowInterface
                 ->withStartToCloseTimeout(
                     DateInterval::createFromDateString('8 hours')
                 )
+                ->withHeartbeatTimeout(
+                    DateInterval::createFromDateString('10 seconds')
+                )
                 ->withRetryOptions(
                     (new RetryOptions)
                         ->withMaximumAttempts(1)

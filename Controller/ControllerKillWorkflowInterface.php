@@ -8,13 +8,9 @@ use Generator;
 use Keboola\StorageDriver\Credentials\GenericBackendCredentials;
 use Temporal\Workflow;
 
-/**
- * @Workflow\WorkflowInterface
- */
+#[Workflow\WorkflowInterface]
 interface ControllerKillWorkflowInterface
 {
-    /**
-     * @Workflow\WorkflowMethod(name="KillDriverCommand")
-     */
+    #[Workflow\WorkflowMethod(name: 'KillDriverCommand')]
     public function killDriverCommand(GenericBackendCredentials $credentials, string $workflowId): Generator;
 }
