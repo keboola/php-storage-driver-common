@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Keboola\StorageDriver\Teradata\Temporal;
+namespace Keboola\StorageDriver\Controller;
 
 use DateTimeInterface;
 use Google\Protobuf\Any;
@@ -10,7 +10,6 @@ use Keboola\StorageDriver\Command\Common\DriverRequest;
 use Keboola\StorageDriver\Command\Common\DriverResponse;
 use Keboola\StorageDriver\Driver\DriverCommandActivityInterface;
 use Keboola\StorageDriver\Shared\Utils\StdErrLogger;
-use Psr\SimpleCache\InvalidArgumentException;
 use RuntimeException;
 use Spiral\Goridge\RPC\RPC;
 use Spiral\RoadRunner\KeyValue\Factory;
@@ -18,7 +17,6 @@ use Spiral\RoadRunner\Services\Exception\ServiceException;
 use Spiral\RoadRunner\Services\Manager;
 use Temporal\Activity;
 use Temporal\Internal\Activity\ActivityContext;
-use function Keboola\StorageDriver\Controller\retry;
 use function React\Async\async;
 use function React\Async\await;
 use function React\Promise\Timer\sleep as async_sleep;
