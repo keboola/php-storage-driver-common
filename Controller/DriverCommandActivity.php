@@ -58,7 +58,7 @@ class DriverCommandActivity implements DriverCommandActivityInterface
         $manager = new Manager($rpc);
 
         // run driver process
-        $result = retry(fn() => $manager->create(
+        $result = Retry::retryUniform(fn() => $manager->create(
             $workflowId,
             'php /code/service/driver/driver.php ' . $workflowId,
             1,
