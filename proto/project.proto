@@ -36,7 +36,8 @@ message CreateProjectResponse {
   * BigQuery project backend credentials
   */
   message CreateProjectBigQueryResponseMeta {
-    string credentials = 1;
+    string publicPart = 1;
+    string privateKey = 2;
   }
 
   google.protobuf.Any meta = 5; // metadata specific for each backend

@@ -17,9 +17,13 @@ use Google\Protobuf\Internal\GPBUtil;
 class CreateProjectBigQueryResponseMeta extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string credentials = 1;</code>
+     * Generated from protobuf field <code>string publicPart = 1;</code>
      */
-    protected $credentials = '';
+    protected $publicPart = '';
+    /**
+     * Generated from protobuf field <code>string privateKey = 2;</code>
+     */
+    protected $privateKey = '';
 
     /**
      * Constructor.
@@ -27,7 +31,8 @@ class CreateProjectBigQueryResponseMeta extends \Google\Protobuf\Internal\Messag
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $credentials
+     *     @type string $publicPart
+     *     @type string $privateKey
      * }
      */
     public function __construct($data = NULL) {
@@ -36,23 +41,45 @@ class CreateProjectBigQueryResponseMeta extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * Generated from protobuf field <code>string credentials = 1;</code>
+     * Generated from protobuf field <code>string publicPart = 1;</code>
      * @return string
      */
-    public function getCredentials()
+    public function getPublicPart()
     {
-        return $this->credentials;
+        return $this->publicPart;
     }
 
     /**
-     * Generated from protobuf field <code>string credentials = 1;</code>
+     * Generated from protobuf field <code>string publicPart = 1;</code>
      * @param string $var
      * @return $this
      */
-    public function setCredentials($var)
+    public function setPublicPart($var)
     {
         GPBUtil::checkString($var, True);
-        $this->credentials = $var;
+        $this->publicPart = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string privateKey = 2;</code>
+     * @return string
+     */
+    public function getPrivateKey()
+    {
+        return $this->privateKey;
+    }
+
+    /**
+     * Generated from protobuf field <code>string privateKey = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPrivateKey($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->privateKey = $var;
 
         return $this;
     }
