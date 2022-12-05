@@ -175,6 +175,11 @@ message ImportExportShared {
   message ExportOptions {
     bool isCompressed = 1; // export file is compressed
     repeated string columnsToExport = 2;
+    int32 limit = 3;
+    string changeSince = 4;
+    string changeUntil = 5;
+    repeated ImportExportShared.TableWhereFilter whereFilters = 6;
+    repeated ImportExportShared.OrderBy orderBy = 7;
   }
   /**
    * Depends on driver implementation which provider is supported

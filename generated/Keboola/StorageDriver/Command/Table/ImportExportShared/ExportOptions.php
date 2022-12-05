@@ -26,6 +26,26 @@ class ExportOptions extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated string columnsToExport = 2;</code>
      */
     private $columnsToExport;
+    /**
+     * Generated from protobuf field <code>int32 limit = 3;</code>
+     */
+    protected $limit = 0;
+    /**
+     * Generated from protobuf field <code>string changeSince = 4;</code>
+     */
+    protected $changeSince = '';
+    /**
+     * Generated from protobuf field <code>string changeUntil = 5;</code>
+     */
+    protected $changeUntil = '';
+    /**
+     * Generated from protobuf field <code>repeated .keboola.storageDriver.command.table.ImportExportShared.TableWhereFilter whereFilters = 6;</code>
+     */
+    private $whereFilters;
+    /**
+     * Generated from protobuf field <code>repeated .keboola.storageDriver.command.table.ImportExportShared.OrderBy orderBy = 7;</code>
+     */
+    private $orderBy;
 
     /**
      * Constructor.
@@ -36,6 +56,11 @@ class ExportOptions extends \Google\Protobuf\Internal\Message
      *     @type bool $isCompressed
      *           export file is compressed
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $columnsToExport
+     *     @type int $limit
+     *     @type string $changeSince
+     *     @type string $changeUntil
+     *     @type \Keboola\StorageDriver\Command\Table\ImportExportShared\TableWhereFilter[]|\Google\Protobuf\Internal\RepeatedField $whereFilters
+     *     @type \Keboola\StorageDriver\Command\Table\ImportExportShared\OrderBy[]|\Google\Protobuf\Internal\RepeatedField $orderBy
      * }
      */
     public function __construct($data = NULL) {
@@ -87,6 +112,116 @@ class ExportOptions extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->columnsToExport = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 limit = 3;</code>
+     * @return int
+     */
+    public function getLimit()
+    {
+        return $this->limit;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 limit = 3;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setLimit($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->limit = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string changeSince = 4;</code>
+     * @return string
+     */
+    public function getChangeSince()
+    {
+        return $this->changeSince;
+    }
+
+    /**
+     * Generated from protobuf field <code>string changeSince = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setChangeSince($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->changeSince = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string changeUntil = 5;</code>
+     * @return string
+     */
+    public function getChangeUntil()
+    {
+        return $this->changeUntil;
+    }
+
+    /**
+     * Generated from protobuf field <code>string changeUntil = 5;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setChangeUntil($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->changeUntil = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .keboola.storageDriver.command.table.ImportExportShared.TableWhereFilter whereFilters = 6;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getWhereFilters()
+    {
+        return $this->whereFilters;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .keboola.storageDriver.command.table.ImportExportShared.TableWhereFilter whereFilters = 6;</code>
+     * @param \Keboola\StorageDriver\Command\Table\ImportExportShared\TableWhereFilter[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setWhereFilters($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Keboola\StorageDriver\Command\Table\ImportExportShared\TableWhereFilter::class);
+        $this->whereFilters = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .keboola.storageDriver.command.table.ImportExportShared.OrderBy orderBy = 7;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getOrderBy()
+    {
+        return $this->orderBy;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .keboola.storageDriver.command.table.ImportExportShared.OrderBy orderBy = 7;</code>
+     * @param \Keboola\StorageDriver\Command\Table\ImportExportShared\OrderBy[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setOrderBy($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Keboola\StorageDriver\Command\Table\ImportExportShared\OrderBy::class);
+        $this->orderBy = $arr;
 
         return $this;
     }
