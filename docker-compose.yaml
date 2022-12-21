@@ -1,4 +1,4 @@
-version: '3'
+version: "3.5"
 services:
   production: &prod
     build:
@@ -23,5 +23,12 @@ services:
   dev-xdebug:
     <<: *dev
     build: etc/docker/xdebug
+  controllerWorker:
+    <<: *dev
+    command:
+      - /usr/local/bin/rr
+      - serve
+      - -c
+      - /code/Controller/.rr.yaml
 volumes:
   exa-volume:

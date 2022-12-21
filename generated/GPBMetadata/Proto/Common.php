@@ -17,12 +17,17 @@ class Common
         \GPBMetadata\Google\Protobuf\Any::initOnce();
         $pool->internalAddGeneratedFile(
             '
-·
-proto/common.proto$keboola.storageDriver.command.common"s
+±
+proto/common.proto$keboola.storageDriver.command.common"„
 DriverRequest)
 credentials (2.google.protobuf.Any%
 command (2.google.protobuf.Any
-features (	bproto3'
+features (	
+backend (	"8
+DriverResponse&
+response (2.google.protobuf.Any",
+TerminateSessionCommand
+	sessionId (	bproto3'
         , true);
 
         static::$is_initialized = true;

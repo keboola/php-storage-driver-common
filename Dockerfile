@@ -1,4 +1,4 @@
-FROM php:7.4-cli-buster
+FROM php:8.1-cli-buster
 
 ARG COMPOSER_FLAGS="--prefer-dist --no-interaction"
 ARG DEBIAN_FRONTEND=noninteractive
@@ -37,10 +37,29 @@ RUN mkdir -p /tmp/protoc && \
     chmod +x /usr/local/bin/protoc && \
     rm -rf /tmp/protoc
 
+RUN mkdir -p /tmp/grpc && \
+    curl -sSLf \
+    -o /tmp/grpc/grpc.tar.gz \
+    https://github.com/roadrunner-server/roadrunner/releases/download/v2.11.1/protoc-gen-php-grpc-2.11.1-linux-amd64.tar.gz && \
+    tar -xf /tmp/grpc/grpc.tar.gz -C /tmp/grpc/ --strip-components 1 && \
+    mv /tmp/grpc/protoc-gen-php-grpc /usr/local/bin && \
+    chmod +x /usr/local/bin/protoc-gen-php-grpc && \
+    rm -rf /tmp/grpc
+
+RUN mkdir -p /tmp/rr && \
+    curl -sSLf \
+    -o /tmp/rr/rr.tar.gz \
+    https://github.com/roadrunner-server/roadrunner/releases/download/v2.11.1/roadrunner-2.11.1-linux-amd64.tar.gz && \
+    tar -xf /tmp/rr/rr.tar.gz -C /tmp/rr/ --strip-components 1 && \
+    mv /tmp/rr/rr /usr/local/bin && \
+    chmod +x /usr/local/bin/rr && \
+    rm -rf /tmp/rr
+
 RUN curl -sSLf \
         -o /usr/local/bin/install-php-extensions \
         https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions && \
-    chmod +x /usr/local/bin/install-php-extensions
+    chmod +x /usr/local/bin/install-php-extensions && \
+    install-php-extensions sockets grpc bcmath
 
 ## Composer - deps always cached unless changed
 # First copy only composer files

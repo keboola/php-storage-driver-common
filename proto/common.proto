@@ -11,4 +11,13 @@ message DriverRequest {
   google.protobuf.Any credentials = 1; // credentials needed to connect into backend
   google.protobuf.Any command = 2; // command object used for actions
   repeated string features = 3; // list of features which could be processed by backend
+  string backend = 4; // name of the backend, this is used to create queue name in temporal
+}
+
+message DriverResponse {
+  google.protobuf.Any response = 1;
+}
+
+message TerminateSessionCommand {
+  string sessionId = 1;
 }

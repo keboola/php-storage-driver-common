@@ -12,13 +12,23 @@
     "require": {
         "php": ">=7.4",
         "ext-json": "*",
+        "ext-bcmath": "*",
         "google/protobuf": "^3.20",
         "keboola/php-file-storage-utils": "^0.2.2",
         "keboola/common-exceptions": "^1",
-        "aws/aws-sdk-php": "^3"
+        "temporal/sdk": "^2",
+        "psr/log": "^2",
+        "doctrine/annotations": "^1.13",
+        "aws/aws-sdk-php": "^3",
+        "keboola/retry": "^0.5.1",
+        "react/async": "^4.0",
+        "spiral/roadrunner-services": "^1.0",
+        "react/promise": "^2.9",
+        "react/promise-timer": "^1.9",
+        "spiral/roadrunner-kv": "^2.2"
     },
     "require-dev": {
-        "phpunit/phpunit": "9.2.*",
+        "phpunit/phpunit": "^9",
         "phpstan/phpstan": "^1.4",
         "phpstan/phpstan-phpunit": "^1.0",
         "phpstan/phpstan-symfony": "^1.1",
@@ -29,6 +39,8 @@
     },
     "autoload": {
         "psr-4": {
+            "Keboola\\StorageDriver\\Controller\\": "Controller/",
+            "Keboola\\StorageDriver\\Driver\\": "Driver/",
             "Keboola\\StorageDriver\\Contract\\": "contract/",
             "Keboola\\StorageDriver\\Shared\\": "Shared/",
             "Keboola\\StorageDriver\\": "generated/Keboola/StorageDriver",
@@ -53,8 +65,8 @@
         "protobuf": "rm -rf ./generated/* && protoc $(find proto -iname \"*.proto\") --php_out=generated",
         "protobufTests": "rm -rf ./tests/generated/* && protoc $(find tests/proto -iname \"*.proto\") --php_out=tests/generated",
         "phplint": "parallel-lint -j 10 --exclude vendor --exclude bin .",
-        "phpcs": "phpcs --extensions=php tests contract Shared --ignore=./tests/generated/*",
-        "phpcbf": "phpcbf --extensions=php tests contract Shared",
+        "phpcs": "phpcs --extensions=php tests contract Controller Driver Shared --ignore=./tests/generated/*",
+        "phpcbf": "phpcbf --extensions=php tests contract Controller Driver Shared",
         "phpstan": "phpstan analyse --no-progress",
         "phpunit": "rm -rf ./tests/generated/* && protoc $(find tests/proto -iname \"*.proto\") --php_out=tests/generated && phpunit",
         "tests": [
