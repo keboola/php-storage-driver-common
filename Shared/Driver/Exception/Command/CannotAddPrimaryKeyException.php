@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Keboola\StorageDriver\Shared\Driver\Exception\Command;
 
+use Keboola\CommonExceptions\ApplicationExceptionInterface;
 use Keboola\StorageDriver\Contract\Driver\Exception\NonRetryableExceptionInterface;
 use Keboola\StorageDriver\Shared\Driver\Exception\Exception;
-use Keboola\CommonExceptions\ApplicationExceptionInterface;
 
 final class CannotAddPrimaryKeyException extends Exception implements
     ApplicationExceptionInterface,
