@@ -9,6 +9,9 @@ services:
         - AWS_SECRET_ACCESS_KEY
     environment:
       - DEBUG
+      - ABS_ACCOUNT_NAME
+      - ABS_ACCOUNT_KEY
+      - ABS_CONTAINER_NAME
       - AWS_ACCESS_KEY_ID
       - AWS_SECRET_ACCESS_KEY
       - AWS_S3_BUCKET

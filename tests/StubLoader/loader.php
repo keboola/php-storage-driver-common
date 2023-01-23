@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use Keboola\StorageDriver\TestsStubLoader\AbsLoader;
 use Keboola\StorageDriver\TestsStubLoader\S3Loader;
 
 date_default_timezone_set('Europe/Prague');
@@ -13,6 +14,17 @@ $basedir = dirname(__DIR__);
 require_once $basedir . '/../vendor/autoload.php';
 
 switch ($argv[1]) {
+    case 'abs':
+        require_once 'AbsLoader.php';
+
+        $loader = new AbsLoader(
+            (string) getenv('ABS_ACCOUNT_NAME'),
+            (string) getenv('ABS_CONTAINER_NAME')
+        );
+        $loader->deleteContainer();
+        $loader->createContainer();
+        $loader->load();
+        break;
     case 's3':
         require_once 'S3Loader.php';
 

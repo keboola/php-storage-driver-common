@@ -15,7 +15,8 @@
         "google/protobuf": "^3.21",
         "keboola/php-file-storage-utils": "^0.2.2",
         "keboola/common-exceptions": "^1",
-        "aws/aws-sdk-php": "^3"
+        "aws/aws-sdk-php": "^3",
+        "microsoft/azure-storage-blob": "^1.4"
     },
     "require-dev": {
         "phpunit/phpunit": "9.2.*",
@@ -61,8 +62,10 @@
             "@protobufTests",
             "@phpunit"
         ],
+        "loadAbs": "php ./tests/StubLoader/loader.php abs",
         "loadS3": "php ./tests/StubLoader/loader.php s3",
         "load-data": [
+            "@loadAbs",
             "@loadS3"
         ],
         "check": [
