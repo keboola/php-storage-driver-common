@@ -79,5 +79,6 @@ message TableInfo {
   repeated string primaryKeysNames = 4; // primary key columns names
   int64 rowsCount = 5;
   int64 sizeBytes = 6;
-  google.protobuf.Any meta = 7; // metadata specific for each backend
+  string tableType = 7;
+  google.protobuf.Any meta = 8; // metadata specific for each backend
 }
