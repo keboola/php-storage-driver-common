@@ -29,6 +29,12 @@ class CreateProjectBigqueryMeta extends \Google\Protobuf\Internal\Message
      * @deprecated
      */
     protected $region = '';
+    /**
+     * The default time zone to use in time zone-dependent SQL functions
+     *
+     * Generated from protobuf field <code>string timezone = 3;</code>
+     */
+    protected $timezone = '';
 
     /**
      * Constructor.
@@ -40,6 +46,8 @@ class CreateProjectBigqueryMeta extends \Google\Protobuf\Internal\Message
      *           file storage bucket in GCS, bigquery load from file doesn't support load with file credentials
      *     @type string $region
      *           region where exchanger for sharing is created
+     *     @type string $timezone
+     *           The default time zone to use in time zone-dependent SQL functions
      * }
      */
     public function __construct($data = NULL) {
@@ -99,6 +107,32 @@ class CreateProjectBigqueryMeta extends \Google\Protobuf\Internal\Message
         @trigger_error('region is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->region = $var;
+
+        return $this;
+    }
+
+    /**
+     * The default time zone to use in time zone-dependent SQL functions
+     *
+     * Generated from protobuf field <code>string timezone = 3;</code>
+     * @return string
+     */
+    public function getTimezone()
+    {
+        return $this->timezone;
+    }
+
+    /**
+     * The default time zone to use in time zone-dependent SQL functions
+     *
+     * Generated from protobuf field <code>string timezone = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTimezone($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->timezone = $var;
 
         return $this;
     }

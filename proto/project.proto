@@ -26,6 +26,7 @@ message CreateProjectCommand {
   message CreateProjectBigqueryMeta {
     string gcsFileBucketName = 1; // file storage bucket in GCS, bigquery load from file doesn't support load with file credentials
     string region = 2 [deprecated = true]; // region where exchanger for sharing is created
+    string timezone = 3; // The default time zone to use in time zone-dependent SQL functions
   }
 }
 
